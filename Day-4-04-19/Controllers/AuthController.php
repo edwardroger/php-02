@@ -14,20 +14,31 @@ class AuthController
 
     public function login($request)
     {
-        // $email = $request['email'];
-        // $password = $request['password'];
+        return [
+            'view' => 'login'
+        ];
+    }
 
-        // if (
-        //     $email == $this->user['email']
-        //     && $password == $this->user['password']
-        //     ) {
+    public function loginSubmit($request)
+    {
+        $email = $request['email'];
+        $password = $request['password'];
+        if (
+            $email == $this->user['email']
+            && $password == $this->user['password']
+            ) {
             
-        //     return 'Login successful';
-        // }
+            return [
+                'view'      => 'login',
+                'redirect'  => '/',
+                'message'   => 'Login successfully',
+            ];
+        }
 
-        // return 'Login failure';
-
-        return 'login';
+        return [
+            'view'      => 'login',
+            'message'   => 'Login failure',
+        ];
     }
 
     // bài tập: 

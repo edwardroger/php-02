@@ -1,13 +1,3 @@
-<?php
-
-include('../Controllers/AuthController.php');
-
-$authController = new AuthController();
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login-submit'])) {
-    $response = $authController->login($_POST);
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,11 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login-submit'])) {
     <title>Login</title>
 </head>
 <body>
-    <?php
-    if (isset($response)) {
-        echo $response;
-    }
-    ?>
     <form action="" method="POST">
         <input type="text" name="email"><br/>
         <input type="password" name="password"><br/>
