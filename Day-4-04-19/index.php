@@ -84,3 +84,18 @@ include './Views/' . $response['view'] . '.php';
 //         'description' => 'Iphone 15 64GB',
 //     ],
 // ]
+// Bài tập:
+// Tạo 1 table teachers:
+// có các fields: id, name, age, gender, years_of_experience
+
+// Thực hiện: thêm 20 data cho bảng teachers
+// Thực hiện các truy vấn:
+// từ bảng teachers
+// - Lấy ra tất cả các giáo viên nữ
+// - Lấy ra tất cả các giáo viên nam
+// - Lấy ra các giáo viên > 50 tuổi
+// - Lấy ra giáo viên có tuổi cao nhất  (MAX)
+// - Lấy ra giáo viên có số năm kinh nghiệm cao nhất (MAX)
+// - Lấy ra giáo viên trẻ tuổi nhất (MIN)
+// - Lấy ra giáo viên ít kinh nghiệm nhất (MIN)
+// - Lấy ra tổng số giáo viên có tuổi nghề > 10 năm (COUNT)
