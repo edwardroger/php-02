@@ -8,6 +8,7 @@
     ) {
         $authController = new AuthController();
         $result = $authController->login($_POST);
+        print_r($_SESSION);
     }
 ?>
 <div class="limiter">
@@ -34,6 +35,7 @@
                         <i class="fa fa-lock" aria-hidden="true"></i>
                     </span>
                 </div>
+                <span><?= isset($result) ? $result : '' ?></span>
                 <div class="container-login100-form-btn">
                     <button type="submit" name="login" class="login100-form-btn">
                         Login
