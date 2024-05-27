@@ -2,7 +2,6 @@
 <?php
     include './controllers/AuthController.php';
 
-    print_r($_SESSION);
     if (
         $_SERVER['REQUEST_METHOD'] == 'POST'
         && isset($_POST['register'])

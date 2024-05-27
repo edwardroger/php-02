@@ -99,3 +99,7 @@ class AuthController
 // - Nếu đã tồn tại session login,
 // user replace url trực tiếp về trang login
 // => đẩy lại về trang homepage.
+
+// Tạo trang dashboard:
+// - Tạo màn hình list category (danh sách danh mục sản phẩm)
+// - Tạo màn hình create category (tạo dạnh mục sản phẩm)
