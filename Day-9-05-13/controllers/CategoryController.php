@@ -20,9 +20,17 @@ class CategoryController
         $this->db = new Database();
     }
 
+    /**
+     * List category
+     *
+     * @return void
+     */
     public function list()
     {
-        
+        $query = "SELECT * FROM categories";
+        $result = $this->db->select($query);
+
+        return $result;
     }
 
     /**
@@ -33,19 +41,46 @@ class CategoryController
      */
     public function create(array $request = [])
     {
+        $response = [];
         $categoryName = $request['category_name'];
         $description = $request['description'];
         $status = isset($request['status']) ? 1 : 0;
         //Validate
+        if ($request['category_name'] == '') {
+            $response['error']['category_name'] = 'Khong duoc bo trong ten danh muc';
+        }
 
         $insertQuery = "INSERT INTO categories (name, status)
             VALUES('$categoryName', '$status')";
         $result = $this->db->insert($insertQuery);
         if ($result) {
-            return 'Create success';
+            $response['response']['success'] = 'Tao moi danh muc thanh cong';
+            return $response;
         }
         //Bài tập:
         // In ra màn hình message khi submit form create category
-        return 'Create fail';
+        $response['response']['error'] = 'Tao moi that bai';
+        return $response;
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param integer|null $id
+     * @return array
+     */
+    public function destroy(?int $id)
+    {
+        $response = [];
+        $query = "DELETE FROM categories WHERE id ='$id'";
+        $result = $this->db->delete($query);
+        if ($result) {
+            $response['response']['success'] = 'Xoa danh muc thanh cong';
+            return $response;
+        }
+        //Bài tập:
+        // In ra màn hình message khi submit form create category
+        $response['response']['error'] = 'Xoa that bai';
+        return $response;
     }
 }

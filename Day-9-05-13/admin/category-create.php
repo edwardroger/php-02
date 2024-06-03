@@ -21,9 +21,30 @@
             <label for="exampleInputEmail1" class="form-label">
                 Create category
             </label>
+            <span class="text-success">
+                <?=
+                    isset($result['response']['success'])
+                    ? $result['response']['success']
+                    : ''
+                ?>
+            </span>
+            <span class="text-error">
+                <?=
+                    isset($result['response']['error'])
+                    ? $result['response']['error']
+                    : ''
+                ?>
+            </span>
             <form class="form-control" method="POST">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Category name</label>
+                    <span class="text-error">
+                        <?=
+                            isset($result['error']['category_name'])
+                            ? $result['error']['category_name']
+                            : ''
+                        ?>
+                    </span>
                     <input type="text" name="category_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
