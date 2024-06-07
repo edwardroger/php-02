@@ -73,9 +73,7 @@
                                                             </span>
                                                         </td>
                                                         <td class="align-middle">
-                                                            <button class="btn btn-link text-secondary mb-0">
-                                                                Update
-                                                            </button>
+                                                            <a href="./category-update.php?id=<?= $category['id'] ?>">Update</a>
                                                         </td>
                                                         <td class="align-middle">
                                                             <a href="?delete=<?= $category['id'] ?>" class="btn btn-link text-secondary mb-0">

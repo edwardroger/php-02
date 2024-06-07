@@ -83,4 +83,33 @@ class CategoryController
         $response['response']['error'] = 'Xoa that bai';
         return $response;
     }
+
+    /**
+     * Show category
+     *
+     * @param string $id
+     * @return void
+     */
+    public function show(string $id = '')
+    {
+        $query = "SELECT * FROM categories WHERE id = '$id'";
+        $result = $this->db->select($query);
+
+        return $result->fetch_assoc();
+    }
+
+    /**
+     * Update category
+     *
+     * @param array $request
+     * @param string $id
+     * @return void
+     */
+    public function update(array $request = [], string $id = '')
+    {
+        $name = $request['name'];
+        $status = $request['status'];
+        $query = "UPDATE categories SET name = '$name', status = '$status'
+            WHERE id = '$id'";
+    }
 }
